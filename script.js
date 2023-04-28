@@ -50,9 +50,64 @@ const multiplyMaker = (num = 0) => {
 };
 
 const multiply = multiplyMaker(2);
-console.log(multiply(2));
-console.log(multiply(1));
-console.log(multiply(3));
-console.log(multiply(10));
+// console.log(multiply(1));
+// console.log(multiply(0));
+// console.log(multiply(3));
+// console.log(multiply(10));
 
+// third
 
+/*
+Реализовать модуль, который работает со строкой и имеет методы:
+
+a. установить строку
+
+i. если передано пустое значение, то установить пустую строку
+
+ii. если передано число, число привести к строке
+
+b. получить строку
+
+c. получить длину строки
+
+d. получить строку-перевертыш
+
+Пример:
+
+модуль.установитьСтроку(‘abcde’);
+
+модуль.получитьСтроку(); // ‘abcde’
+
+модуль.получитьДлину(); // 5
+*/
+
+const strMd = () => {
+  let str = "";
+  function setStr(val = "") {
+    str = String(val);
+    return val;
+  }
+  function getStr() {
+    return str;
+  }
+  function getLengthStr() {
+    return str.length;
+  }
+  function getReverseStr(reverseStr = "") {
+    reverseStr = str.split("");
+    reverseStr = reverseStr.reverse();
+    reverseStr = reverseStr.join("");
+    return reverseStr;
+  }
+  return {
+    setStr,
+    getStr,
+    getLengthStr,
+    getReverseStr,
+  };
+};
+const result = strMd();
+console.log(result.setStr("sdrw"));
+console.log(result.getStr());
+console.log(result.getLengthStr());
+console.log(result.getReverseStr());
