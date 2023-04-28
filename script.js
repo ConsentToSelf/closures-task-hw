@@ -52,3 +52,7 @@ const multiplyMaker = (num = 0) => {
 const multiply = multiplyMaker(2);
 console.log(multiply(2));
 console.log(multiply(1));
+console.log(multiply(3));
+console.log(multiply(10));
+
+
