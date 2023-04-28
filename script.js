@@ -22,4 +22,33 @@ const minus = (x = 0) => {
   };
 };
 const res = minus()(6);
-console.log(res);
+// console.log(res);
+
+// second
+
+/*
+Реализовать функцию, которая умножает и умеет запоминать возвращаемый результат между вызовами:
+
+function multiplyMaker ...
+
+const multiply = multiplyMaker(2);
+
+multiply(2); // 4 (2 * 2)
+
+multiply(1); // 4 (4 * 1)
+
+multiply(3); // 12 (4 * 3)
+
+multiply(10); // 120 (12 * 10)
+
+*/
+const multiplyMaker = (num = 0) => {
+  let k = num;
+  return function (x = 0) {
+    return (k *= x);
+  };
+};
+
+const multiply = multiplyMaker(2);
+console.log(multiply(2));
+console.log(multiply(1));
