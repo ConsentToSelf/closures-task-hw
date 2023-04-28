@@ -107,7 +107,52 @@ const strMd = () => {
   };
 };
 const result = strMd();
-console.log(result.setStr("sdrw"));
-console.log(result.getStr());
-console.log(result.getLengthStr());
-console.log(result.getReverseStr());
+// console.log(result.setStr("sdrw"));
+// console.log(result.getStr());
+// console.log(result.getLengthStr());
+// console.log(result.getReverseStr());
+
+// fourth
+
+/*
+Создайте модуль “калькулятор”, который умеет складывать, умножать, вычитать,
+делить и возводить в степень.
+Конечное значение округлить до двух знаков после точки (значение должно храниться в обычной переменной, не в this).
+
+модуль.установитьЗначение(10); // значение = 10
+модуль.прибавить(5); // значение += 5
+модуль.умножить(2); // значение *= 2
+модуль.узнатьЗначение(); // вывести в консоль 30 (здесь надо округлить)
+
+Также можно вызывать методы цепочкой:
+
+модуль.установитьЗначение(10).вСтепень(2).узнатьЗначение();
+*/
+
+const calculator = () => {
+  let num = 0;
+  function getValue(value = 0) {
+    num = value;
+    return this;
+  }
+  function plusNum(p = 0) {
+    num += p;
+    return this;
+  }
+  function multiply(m = 0) {
+    num *= m;
+    return this;
+  }
+  function getValueNum() {
+    return Math.round(num);
+  }
+  return {
+    getValue,
+    plusNum,
+    multiply,
+    getValueNum,
+  };
+};
+
+const resultCalc = calculator();
+console.log(resultCalc.getValue(10).plusNum(5).multiply(2).getValueNum());
